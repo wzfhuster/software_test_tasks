@@ -105,7 +105,6 @@ public class WordCount {
 					{
 						String ss []  = s.trim().split(" |,|	");
 						count+=ss.length;
-						//System.out.println(ss.length);
 					}
 			}
 			in.close();
@@ -147,7 +146,7 @@ public class WordCount {
 			BufferedReader in = new BufferedReader(new FileReader(fileName));
 			while((s = in.readLine())!=null)
 			{
-				if(s.isEmpty() || s.length()<=1) ++space;
+				if(s.isEmpty() || s.trim().length()<=1) ++space;
 				else
 				{
 					int t=0;
