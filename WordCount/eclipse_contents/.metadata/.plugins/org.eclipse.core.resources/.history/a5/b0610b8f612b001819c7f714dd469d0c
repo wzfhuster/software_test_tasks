@@ -1,0 +1,163 @@
+package wordCount;
+
+import java.io.*;
+import java.util.ArrayList;
+
+public class WordCount {
+	
+	public static ArrayList<String> sList = new ArrayList<String>();
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+		WordCount wc = new WordCount();
+		if(args.length>1)
+		{
+		int last = args.length -1;
+		String name = args[last];
+		String outputName = "";
+		String tmp;
+		int flag = 0; //是否将结果写入某个文件
+		for(int i=0;i<last;i++) //这个for用来判断是否需要将信息输出到一个文件中
+			if(args[i].equals("-o"))
+			{
+				flag=1;
+				name = args[last-2];
+				outputName = args[last];
+				break;
+			}
+		for(int i=0;i<last;i++)
+			if(args[i].equals("-c")) 
+				{
+					tmp = new String(wc.getC(name));
+					System.out.println(tmp);
+					sList.add(tmp);
+				}
+			else if(args[i].equals("-w"))
+			{
+				tmp = new String(wc.getW(name));
+				System.out.println(tmp);
+				sList.add(tmp);
+			}
+			else if(args[i].equals("-l"))
+			{
+				tmp = new String(wc.getl(name));
+				System.out.println(tmp);
+				sList.add(tmp);
+			}
+			else if(args[i].equals("-a"))
+			{
+				tmp = new String(wc.geta(name));
+				System.out.println(tmp);
+				sList.add(tmp);
+			}
+		if(flag==1)
+		{
+			wc.writeFile(outputName);
+			System.out.println();
+			System.out.println("将信息写入"+outputName+"文件成功！！！");
+		}
+		}else
+		{
+			System.out.println("请先输入参数！！！");
+		}
+			
+			
+	}
+	
+	public String getC(String fileName)
+	{
+		int count=0;
+		String s;
+		int c;
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(fileName));
+			//FileReader in = new FileReader(fileName);
+			while((s=in.readLine())!=null)
+				count+=s.length();
+			in.close();
+		} catch (FileNotFoundException e1) {
+			System.out.println("找不到文件!!!");
+			e1.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return fileName+", 字符数为："+count;
+	}
+	
+	public String getW(String fileName)
+	{
+		int count=0;
+		String s;
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(fileName));
+			while((s = in.readLine())!=null)
+			{
+				if(!s.isEmpty())
+					{
+						String ss []  = s.trim().split(" |,|	");
+						count+=ss.length;
+						//System.out.println(ss.length);
+					}
+			}
+			in.close();
+		} catch (FileNotFoundException e1) {
+			System.out.println("找不到文件!!!");
+			e1.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return fileName+", 单词数为："+count;
+	}
+	
+	public String getl(String fileName)
+	{
+		int count=0;
+		String s;
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(fileName));
+			while((s = in.readLine())!=null)
+				{
+					if(s.length()>0)
+						++count;
+				}
+			in.close();
+		} catch (FileNotFoundException e1) {
+			System.out.println("找不到文件!!!");
+			e1.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return fileName+", 行数为："+count;
+	}
+	
+	public String geta(String fileName)
+	{
+		int count=0,space=0,h=0;
+		String s;
+		try {
+			BufferedReader in = new BufferedReader(new FileReader(fileName));
+			while((s = in.readLine())!=null)
+			{
+				if(s.isEmpty() || s.length()<=1) ++space;
+				else
+				{
+					int t=0;
+					while(t<s.length()&&s.charAt(t)==' ') ++t;
+					if((t+1<s.length() && s.charAt(t)=='/' && s.charAt(t+1)=='/')
+							|| (t+2<s.length() && s.charAt(t+1)=='/' && s.charAt(t+2)=='/')) ++h;
+					else
+						++count;
+				}
+			}
+			in.close();
+		} catch (FileNotFoundException e1) {
+			System.out.println("找不到文件!!!");
+			e1.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return fileName+", 代码行/空行/注释行:"+count+"/"+space+"/"+h;
+	}
+	
+	
+}
+
