@@ -137,8 +137,6 @@ public class WordCount {
 		return fileName+", 总的行数为："+count;
 	}
 	
-	
-	//该函数用来返回具体的代码行数，注释行数和空的行数！！！
 	public String geta(String fileName)
 	{
 		int count=0,space=0,h=0;
@@ -168,7 +166,6 @@ public class WordCount {
 		return fileName+", 代码行/空行/注释行:"+count+"/"+space+"/"+h;
 	}
 	
-	//该行数用来将结果写入指定的文件中
 	public void writeFile(String fileName)
 	{
 		try {

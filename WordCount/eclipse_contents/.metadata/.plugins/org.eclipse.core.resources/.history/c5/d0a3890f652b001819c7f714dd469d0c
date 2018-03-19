@@ -168,7 +168,6 @@ public class WordCount {
 		return fileName+", 代码行/空行/注释行:"+count+"/"+space+"/"+h;
 	}
 	
-	//该行数用来将结果写入指定的文件中
 	public void writeFile(String fileName)
 	{
 		try {

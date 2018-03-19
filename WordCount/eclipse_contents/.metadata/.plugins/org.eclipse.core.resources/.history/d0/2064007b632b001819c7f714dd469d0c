@@ -1,27 +1,22 @@
-package wordCount;
+package wc;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class WordCount {
 	
-	//这里创建的list用来存放每个命令处理后的输出的结果
-	//用来保存这些结果，需要输出到文件时，就将list中的结果都输出到指定文件中
 	public static ArrayList<String> sList = new ArrayList<String>();
 	public static void main(String[] args){
+		// TODO Auto-generated method stub
 		WordCount wc = new WordCount();
 		if(args.length>1)
 		{
 		int last = args.length -1;
-		String name = args[last];	//用来存放读取文件的名字
-		String outputName = "";		//用来存放输出文件的名字
+		String name = args[last];
+		String outputName = "";
 		String tmp;
-		
-		//是否将结果写入某个文件的标志
-		int flag = 0;
-		
-		//这个for用来判断是否需要将信息输出到一个文件中
-		for(int i=0;i<last;i++)
+		int flag = 0; //是否将结果写入某个文件
+		for(int i=0;i<last;i++) //这个for用来判断是否需要将信息输出到一个文件中
 			if(args[i].equals("-o"))
 			{
 				flag=1;
@@ -29,8 +24,6 @@ public class WordCount {
 				outputName = args[last];
 				break;
 			}
-		
-		//这个for用来循环读取命令行中传入的参数
 		for(int i=0;i<last;i++)
 			if(args[i].equals("-c")) 
 				{
@@ -56,21 +49,20 @@ public class WordCount {
 				System.out.println(tmp);
 				sList.add(tmp);
 			}
-		
-		//如果flag=1，表示需要将结果输出到一个文件中
-			if(flag==1)
-			{
-				wc.writeFile(outputName);
-				System.out.println();
-				System.out.println("将信息写入"+outputName+"文件成功！！！");
-			}
+		if(flag==1)
+		{
+			wc.writeFile(outputName);
+			System.out.println();
+			System.out.println("将信息写入"+outputName+"文件成功！！！");
+		}
 		}else
-			System.out.println("请先输入参数！！！");   //如果wc.exe后面没有输入参数，就打印提示信息
-				
+		{
+			System.out.println("请先输入参数！！！");
+		}
+			
+			
 	}
 	
-	
-	//该函数用来计算指定文件中字符的个数，《其中回车换行都没计入字符数中！！！》
 	public String getC(String fileName)
 	{
 		int count=0;
@@ -91,8 +83,6 @@ public class WordCount {
 		return fileName+", 字符数为："+count;
 	}
 	
-	
-	//该函数用来计算指定文件中单词的个数
 	public String getW(String fileName)
 	{
 		int count=0;
@@ -118,7 +108,6 @@ public class WordCount {
 		return fileName+", 单词数为："+count;
 	}
 	
-	//该函数用来计算指定文件中的总的行数，包括空的行和注释行
 	public String getl(String fileName)
 	{
 		int count=0;
@@ -126,7 +115,10 @@ public class WordCount {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(fileName));
 			while((s = in.readLine())!=null)
-				++count;
+				{
+					if(s.length()>0)
+						++count;
+				}
 			in.close();
 		} catch (FileNotFoundException e1) {
 			System.out.println("找不到文件!!!");
@@ -134,11 +126,9 @@ public class WordCount {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return fileName+", 总的行数为："+count;
+		return fileName+", 行数为："+count;
 	}
 	
-	
-	//该函数用来返回具体的代码行数，注释行数和空的行数！！！
 	public String geta(String fileName)
 	{
 		int count=0,space=0,h=0;
@@ -168,7 +158,6 @@ public class WordCount {
 		return fileName+", 代码行/空行/注释行:"+count+"/"+space+"/"+h;
 	}
 	
-	//该行数用来将结果写入指定的文件中
 	public void writeFile(String fileName)
 	{
 		try {
