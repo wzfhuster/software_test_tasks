@@ -1,0 +1,14 @@
+package wordCountPro;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class wcProOutputTest {
+
+	@Test
+	public void testOutput() {
+		
+	}
+
+}

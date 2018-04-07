@@ -1,0 +1,41 @@
+package wordCountPro;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+
+public class wcProOutput {
+
+		public static void output(Map<String, Integer> map)
+		{
+			try {
+				FileWriter writer = new FileWriter("result.txt");
+				
+//				Map<String, String> map = new HashMap<String, String>();
+//				map.put("a", "c");
+//				map.put("b", "b");
+//				map.put("c", "a");
+				 
+				// 通过ArrayList构造函数把map.entrySet()转换成list
+				List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(map.entrySet());
+				// 通过比较器实现比较排序
+				Collections.sort(list, new Comparator<Map.Entry<String, String>>() {
+				    public int compare(Map.Entry<String, String> mapping1, Map.Entry<String, String> mapping2) {
+				        return mapping1.getKey().compareTo(mapping2.getKey());
+				    }
+				});
+				 
+				for (Map.Entry<String, String> mapping : list) {
+				    System.out.println(mapping.getKey() + " ：" + mapping.getValue());
+				}
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println("文件写入错误！！！");
+			}
+		}
+}

@@ -1,0 +1,31 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.*;
+
+public class wcProMain {
+
+
+	public static void main(String[] args) {
+		wcProMain wcPro = new wcProMain();
+		Map<String,Integer> map = new HashMap<String,Integer>();
+		
+		BufferedReader in = wcProInput.getInput(args);
+		
+		wcPro.wordCount(in, map);
+		
+		wcProOutput.output(map);
+	}
+	
+	public void wordCount(BufferedReader in, Map<String,Integer> map)
+	{
+		return;
+	}
+
+}

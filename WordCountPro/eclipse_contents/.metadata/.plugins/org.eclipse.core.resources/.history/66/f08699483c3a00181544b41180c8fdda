@@ -1,0 +1,22 @@
+package wordCountProTest;
+
+import static org.junit.Assert.*;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import org.junit.Test;
+
+import wordCountPro.wcProMain;
+
+public class wcProMainTest {
+
+	wcProMain wcPro = new wcProMain();
+	
+	@Test
+	public void testWordCount() throws FileNotFoundException {
+		BufferedReader in = new BufferedReader(new FileReader("tes.txt"));
+	}
+
+}

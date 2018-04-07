@@ -1,0 +1,11 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+
+public class wcProInput {
+	
+	public BufferedReader getInput(String[] args)
+	{
+		return null;
+	}
+}

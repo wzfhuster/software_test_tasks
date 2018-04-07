@@ -1,0 +1,58 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.*;
+
+public class wcProMain {
+
+
+	public static void main(String[] args) {
+		wcProMain wcPro = new wcProMain();
+		Map<String,Integer> map = new HashMap<String,Integer>();
+		
+		//对输入进行处理
+		BufferedReader in = wcProInput.getInput(args);
+		
+		//对单词词频进行统计
+		//wcPro.wordCount(in, map);
+		
+		map.put("he", 1)
+		if(map.get("he")==null)
+			map.put("he", 5); 
+		map.put("he", map.get("he").intValue()+1);
+		//将单词统计结果按照要求写入指定的 result.txt 文件中
+		wcProOutput.output(map);
+	}
+	
+	
+	public void wordCount(BufferedReader in, Map<String,Integer> map)
+	{
+		String s;
+		try {
+			while((s = in.readLine())!=null)
+			{
+				String ss []  = s.trim().split("~|`|!|#|%|^|&|*|_|(|)|/"
+	        			+ "|...|[|]|+|=|:|;|\"|'|<|>|,|.|?"
+	        			+ "| |\t");
+				int len = ss.length;
+				String tmp;
+				for(int i=0;i<len;i++)
+				{
+					tmp = ss[i].replace("-", "");
+					if(!tmp.trim().equals(""))
+						map.put(tmp, map.get(tmp).intValue()+1);
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("文件读取过程中出错！！！");
+		}
+	}
+
+}

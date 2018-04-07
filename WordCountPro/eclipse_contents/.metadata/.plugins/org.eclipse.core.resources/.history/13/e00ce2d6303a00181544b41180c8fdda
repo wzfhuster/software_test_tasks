@@ -1,0 +1,23 @@
+package wordCountPro;
+
+import static org.junit.Assert.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class wcProOutputTest {
+
+	@Before
+	public void setUp()
+	{
+		Map<String, Integer> map = new HashMap<String, Integer>();
+	}
+	@Test
+	public void testOutput() {
+		
+	}
+
+}

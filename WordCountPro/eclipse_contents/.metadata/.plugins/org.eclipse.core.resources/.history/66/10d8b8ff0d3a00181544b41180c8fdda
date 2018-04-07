@@ -1,0 +1,19 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+import org.junit.Assert.assertEquals;
+import java.io.FileReader;
+
+public class wcProMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BufferedReader b = new BufferedReader(new FileReader("fh"));
+		
+		if()
+			System.out.println("shit");
+		else
+			System.out.println("fuck");
+	}
+
+}

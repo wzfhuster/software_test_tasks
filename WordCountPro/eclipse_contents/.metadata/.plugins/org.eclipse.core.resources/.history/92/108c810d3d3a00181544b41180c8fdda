@@ -1,0 +1,33 @@
+package wordCountProTest;
+
+import static org.junit.Assert.*;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import wordCountPro.wcProMain;
+
+public class wcProMainTest {
+
+	wcProMain wcPro = new wcProMain();
+	Map<String,Integer> map = new HashMap<String, Integer>();
+	
+	@Before
+	public void setUp()
+	{
+		map.clear();
+	}
+	
+	@Test
+	public void testWordCount() throws FileNotFoundException {
+		BufferedReader in = new BufferedReader(new FileReader("test.txt"));
+		wcPro.wordCount(in, map);
+	}
+
+}

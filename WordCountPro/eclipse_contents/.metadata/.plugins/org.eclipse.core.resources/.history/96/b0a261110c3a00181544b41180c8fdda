@@ -1,0 +1,10 @@
+package wordCountPro;
+
+public class wcProMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

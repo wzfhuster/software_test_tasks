@@ -1,0 +1,17 @@
+package wordCountProTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import wordCountPro.wcProInput;
+
+public class wcProInputTest {
+
+	@Test
+	public void testGetInput() {
+		String s[] = {"hfie"};
+		wcProInput.getInput(s);
+	}
+
+}

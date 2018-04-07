@@ -1,0 +1,16 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+
+public class wcProInput {
+	
+	public BufferedReader getInput(String[] args)
+	{
+		if(args.length==0)
+		{
+			
+			System.out.println("输入的文件名参数不能为空！！！");
+		}
+		return null;
+	}
+}

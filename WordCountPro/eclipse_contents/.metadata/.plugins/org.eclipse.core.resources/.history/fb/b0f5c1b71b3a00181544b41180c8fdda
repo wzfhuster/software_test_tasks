@@ -1,0 +1,11 @@
+package wordCountPro;
+
+import java.util.Map;
+
+public class wcProOutput {
+
+		public static void output(String filename, Map<String, Integer> map)
+		{
+			
+		}
+}

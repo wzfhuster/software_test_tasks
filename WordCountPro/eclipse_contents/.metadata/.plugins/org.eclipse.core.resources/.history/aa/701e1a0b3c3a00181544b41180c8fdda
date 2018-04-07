@@ -1,0 +1,14 @@
+package wordCountProTest;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class wcProMainTest {
+
+	@Test
+	public void testWordCount() {
+		fail("Not yet implemented");
+	}
+
+}

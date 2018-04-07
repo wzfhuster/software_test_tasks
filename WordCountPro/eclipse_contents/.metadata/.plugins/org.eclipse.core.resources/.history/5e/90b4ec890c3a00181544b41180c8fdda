@@ -1,0 +1,14 @@
+package wordCountPro;
+
+public class wcProMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a  = 3,b=4;
+		if(instanceof(a)==instanceof(b))
+			System.out.println("shit");
+		else
+			System.out.println("fuck");
+	}
+
+}

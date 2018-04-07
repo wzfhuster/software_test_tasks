@@ -1,0 +1,40 @@
+package wordCountPro;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.swing.table.TableColumnModel;
+
+import org.hamcrest.core.IsInstanceOf;
+import org.junit.Before;
+import org.junit.Test;
+
+public class wcProOutputTest {
+
+	Map<String, Integer> map = new HashMap<String, Integer>();
+	List<Map.Entry<String, Integer>> list = null;
+	String expectResult = null;
+	
+	@Before
+	public void setUp()
+	{
+		map.clear();
+	}
+	
+	@Test
+	public void testOutput() {
+		map.put("this", 200);
+		map.put("i", 180);
+		map.put("ij", 80);
+		map.put("the", 180);
+		list = wcProOutput.output(map, "result.txt");
+		
+		
+	}
+
+}

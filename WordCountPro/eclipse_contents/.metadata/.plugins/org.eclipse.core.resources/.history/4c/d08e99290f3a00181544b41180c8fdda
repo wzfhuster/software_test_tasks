@@ -1,0 +1,22 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class wcProMain {
+
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		BufferedReader b = new BufferedReader(new FileReader("test1"));
+		assertEquals("shit",b.getClass(),BufferedReader.class);
+		if(b.getClass()==BufferedReader.class)
+			System.out.println("shit");
+		else
+			System.out.println("fuck");
+	}
+
+}

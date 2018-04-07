@@ -1,0 +1,9 @@
+package wordCountPro;
+
+public class wcProOutput {
+
+		public static void output()
+		{
+			
+		}
+}

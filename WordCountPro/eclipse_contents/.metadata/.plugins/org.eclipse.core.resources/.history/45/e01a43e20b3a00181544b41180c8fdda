@@ -1,0 +1,9 @@
+package wordCountPro;
+
+public class wcProInput {
+	
+	public BufferReader getInput(String[] args)
+	{
+		
+	}
+}

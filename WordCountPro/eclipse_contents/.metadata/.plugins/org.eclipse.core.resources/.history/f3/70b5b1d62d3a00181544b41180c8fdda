@@ -1,0 +1,18 @@
+package wordCountProTest;
+
+import static org.junit.Assert.*;
+
+import java.io.BufferedReader;
+
+import org.junit.Test;
+import wordCountPro.wcProInput;
+
+public class wcProInputTest {
+
+	@Test
+	public void testGetInput() {
+		String s[] = {"hfie"};
+		assertEquals(BufferedReader.class, wcProInput.getInput(s).getClass());
+	}
+
+}

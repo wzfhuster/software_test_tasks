@@ -1,0 +1,18 @@
+package wordCountPro;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Map;
+
+public class wcProOutput {
+
+		public static void output(String filename, Map<String, Integer> map)
+		{
+			try {
+				FileWriter writer = new FileWriter(filename);
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println("ÎÄ¼þÐ´Èë´íÎó£¡£¡£¡");
+			}
+		}
+}

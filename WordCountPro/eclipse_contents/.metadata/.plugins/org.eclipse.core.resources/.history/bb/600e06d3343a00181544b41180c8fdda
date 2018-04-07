@@ -1,0 +1,57 @@
+package wordCountPro;
+
+import static org.junit.Assert.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.swing.table.TableColumnModel;
+
+import org.hamcrest.core.IsInstanceOf;
+import org.junit.Before;
+import org.junit.Test;
+
+public class wcProOutputTest {
+
+	Map<String, Integer> map = new HashMap<String, Integer>();
+	List<Map.Entry<String, Integer>> list = null;
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof List<?>)
+		{
+			@SuppressWarnings("unchecked")
+			List<Map.Entry<String, Integer>> tmp = (List<Map.Entry<String, Integer>>)obj;
+			int len = tmp.size();
+			boolean flag = true;
+			for(int i=0;i<len;i++)
+				if(tmp.get(i).getKey()!=list.get(i).getKey() || 
+				tmp.get(i).getValue()!=list.get(i).getValue())
+				{
+					flag = false;
+					break;
+				}
+			return flag;
+		}
+		else 
+			return super.equals(obj);
+	}
+	
+	@Before
+	public void setUp()
+	{
+		map.clear();
+	}
+	
+	@Test
+	public void testOutput() {
+		map.put("this", 200);
+		map.put("i", 180);
+		map.put("ij", 80);
+		map.put("the", 180);
+		list = wcProOutput.output(map, "result.txt");
+		
+	}
+
+}

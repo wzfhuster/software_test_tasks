@@ -1,0 +1,45 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.*;
+
+public class wcProMain {
+
+
+	public static void main(String[] args) {
+		wcProMain wcPro = new wcProMain();
+		Map<String,Integer> map = new HashMap<String,Integer>();
+		
+		//对输入进行处理
+		BufferedReader in = wcProInput.getInput(args);
+		
+		//对单词词频进行统计
+		//wcPro.wordCount(in, map);
+		
+		map.put("HHH", 4);
+		//将单词统计结果按照要求写入指定的 result.txt 文件中
+		wcProOutput.output(map);
+	}
+	
+	
+	public void wordCount(BufferedReader in, Map<String,Integer> map)
+	{
+		String s;
+		try {
+			while((s = in.readLine())!=null)
+			{
+				
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("文件读取过程中出错！！！");
+		}
+	}
+
+}

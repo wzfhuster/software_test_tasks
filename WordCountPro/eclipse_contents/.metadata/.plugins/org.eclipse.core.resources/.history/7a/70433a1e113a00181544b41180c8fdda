@@ -1,0 +1,26 @@
+package wordCountPro;
+
+import java.io.BufferedReader;
+
+public class wcProInput {
+	
+	public BufferedReader getInput(String[] args)
+	{
+		if(args.length==0)		
+			System.out.println("输入的文件名参数不能为空！！！");
+		else if(args.length>1)
+			System.out.println("文件名参数过多，一次只能处理一个文件！！！");
+		else{
+			int len = args[0].length();
+			String name = args[0];
+			if(len>4 && name.charAt(len-1)=='t'&&name.charAt(len-2)=='x' && 
+					name.charAt(len-3)=='t' && name.charAt(len-4)=='.')
+			{
+				
+			}
+			else
+				System.out.println("只能输入一个***.txt的文件！！！");
+		}
+		return null;
+	}
+}
