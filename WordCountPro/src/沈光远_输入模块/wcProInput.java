@@ -15,8 +15,8 @@ public class wcProInput {
 		else{
 			int len = args[0].length();
 			String name = args[0];
-			if(len>4 && name.charAt(len-1)=='t'&&name.charAt(len-2)=='x' && 
-					name.charAt(len-3)=='t' && name.charAt(len-4)=='.')
+			if(len>4 && name.toLowerCase().charAt(len-1)=='t'&&name.toLowerCase().charAt(len-2)=='x' && 
+					name.toLowerCase().charAt(len-3)=='t' && name.charAt(len-4)=='.')
 			{
 				try {
 					BufferedReader in = new BufferedReader(new FileReader(name));
