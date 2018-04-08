@@ -149,7 +149,7 @@ public void wordCount(BufferedReader in, Map<String,Integer> map)
   19. 具体的测试用例截图： 
   <br>  
   
-![这个是测试用例的截图](https://raw.github.com/yourName/repositpry/master/yourprojectName/img-folder/test.jpg)  
+![](https://github.com/wzfhuster/software_test_tasks/tree/master/WordCountPro/image/测试用例.PNG)  
 
 
 <br>
@@ -232,7 +232,7 @@ public class wcProMainTest {
 * 单元测试的运行截图： 
 <br>  
 
-![这个是测试程序代码](https://raw.github.com/yourName/repositpry/master/yourprojectName/img-folder/test.jpg)  
+![](https://github.com/wzfhuster/software_test_tasks/tree/master/WordCountPro/image/单元测试.PNG)  
 
 <br>
 
