@@ -3,14 +3,16 @@
 ### 目录结构：
 *   BIN：里面存放的是 wc.exe和一些测试文件，注意wc.exe运行需要有jre的环境，我的jre有180M太大就不上传了
 *   eclipse_contents：这个是在eclipse环境下编码的项目目录
-*   src：里面是java的源代码和对应的单元测试代码  
+*   src：里面每个人负责的模块代码和对应的单元测试代码  
 *   image：里面存放的是一些截图
 <br>
-
+  
+  
+## 下面是我负责的单词统计模块和main函数的内容
 ## github地址：
 
 [https://github.com/wzfhuster/software_test_tasks](https://github.com/wzfhuster/software_test_tasks)  
-<br>  
+
 <br>
 
 ## psp2.1表格：
