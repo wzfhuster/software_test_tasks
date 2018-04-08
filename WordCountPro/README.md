@@ -1,6 +1,6 @@
-# software_test_tasks
+# WordCountPro
 
-### 在WordCount中有三个目录：
+### 目录结构：
 *   BIN：里面存放的是 wc.exe和一些测试文件，注意wc.exe运行需要有jre的环境，我的jre有180M太大就不上传了
 *   eclipse_contents：这个是在eclipse环境下编码的项目目录
 *   src：里面是java的源代码和对应的单元测试代码  
@@ -36,7 +36,7 @@
 
 ## 对接口的实现:
   1. **我负责的是核心模块单词统计和main函数的编写，在java中是wcProMain.java** 
-  2. **单词统计的接口: ** public void wordCount(BufferedReader in, Map<String,Integer> map)
+  2. **单词统计的接口:** public void wordCount(BufferedReader in, Map<String,Integer> map)
                  它接受由输入模块返回的一个BufferedReader的对象，用来读取文件中的内容，然后对
                  文本中的单词统计后存入一个map中 
   3. **main函数的编写：** 首先由输入模块接受一个输入文件，并且判断输入是否符合要求，如果符合要求则返回一个BufferedReader对象
@@ -51,10 +51,9 @@
                    小问题要考虑，就是该map中原来是否存在这个单词，如果不存在，就map.put(tmp, 1);，如果存在就计数器加一
                    map.put(tmp, map.get(tmp).intValue()+1);，最后读取文件的过程中要try catch处理异常，最后别忘了关掉流对象，具体
                    的代码及注释如下  
-<br>  
-<br>  
+		   
 
-### 单词统计的接口：
+#### 单词统计的接口：
 
 ```java
 
@@ -99,11 +98,10 @@ public void wordCount(BufferedReader in, Map<String,Integer> map)
 	}
   
 ```  
+  
+  
 
-<br>
-<br>
-
-### main函数的编写：
+#### main函数的编写：
 
 ```java
 	public static void main(String[] args) {
@@ -126,10 +124,10 @@ public void wordCount(BufferedReader in, Map<String,Integer> map)
 <br>
 
 ## 测试用例的设计
-　　 因为我负责的是单词统计模块和main函数的编写，所以我的测试用例主要针对对单词统计的正确性进行测试，我使用的是黑盒测试，  
-  而单词统计的主要任务是统计文本中不同单词出现的频率，所以对测试用例的设计主要是针对文本中单词与各种符号组合的各种情况  
-  来设计用例，对于一个设计好了的文本用例，我们用wordCount函数来处理后得到一个map保存了单词及其对应的频率，最后来对比  
-  预期的结果和实际的单词统计结果，对于文本内容的各种情况如下：   
+　　 因为我负责的是单词统计模块和main函数的编写，所以我的测试用例主要针对对单词统计的正确性进行测试，我使用的是  
+   黑盒测试，而单词统计的主要任务是统计文本中不同单词出现的频率，所以对测试用例的设计主要是针对文本中单词与各种  
+   符号组合的各种情况来设计用例，对于一个设计好了的文本用例，我们用wordCount函数来处理后得到一个map保存了单词  
+   及其对应的频率，最后来对比预期的结果和实际的单词统计结果，对于文本内容的各种情况如下：   
   1. 文本的内容为空  
   2. 文本中只有空格或者tab  
   3. 文本中只有符号没有单词  
@@ -238,11 +236,11 @@ public class wcProMainTest {
 
 <br>
 
-* **测试评价** 
+* **测试评价**  
+
 由测试的结果来看目前给出的20个测试用例都已经通过了测试，测试质量还不错，被测试模块的质量基本符合要求但这不代表程序一  
   定正确，可能还有其它小小的问题没有被发现，之后可以增加测试情况的种类来测试程序，发现问题并修改，来增加程序的健壮性
 
-<br>
 <br>
 
 ## 小组贡献率
@@ -252,6 +250,6 @@ public class wcProMainTest {
 <br>
 
 ## 参考文献链接
-[http://blog.csdn.net/tw19811220/article/details/41040937](http://blog.csdn.net/tw19811220/article/details/41040937)  
-[http://blog.csdn.net/etjnety/article/details/7842618](http://blog.csdn.net/etjnety/article/details/7842618)  
-[http://www.cnblogs.com/math/p/se-tools-001.html](http://www.cnblogs.com/math/p/se-tools-001.html)
+[http://www.cnblogs.com/ningjing-zhiyuan/p/8654132.html](http://www.cnblogs.com/ningjing-zhiyuan/p/8654132.html)  
+[https://www.cnblogs.com/avivahe/p/5657070.html](https://www.cnblogs.com/avivahe/p/5657070.html)  
+[https://blog.csdn.net/wiebin36/article/details/51912794](https://blog.csdn.net/wiebin36/article/details/51912794)
